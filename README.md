@@ -1,0 +1,2 @@
+# game-jbzd
+OSTATNIE REPO TO ŚMIETNIK :c
