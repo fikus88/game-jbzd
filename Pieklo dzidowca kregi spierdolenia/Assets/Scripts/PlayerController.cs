@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         UpdateCharacterMovement();
-        UpdateCharacterAnimation();
+        //UpdateCharacterAnimation();
 
         /*
         var targetVector = new Vector3(inputHandler.InputVector.x, 0, inputHandler.InputVector.y).normalized;   //player direction
