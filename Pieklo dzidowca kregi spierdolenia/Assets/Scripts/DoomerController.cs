@@ -20,19 +20,16 @@ public class DoomerController : MonoBehaviour
 
     private Vector3 spawnPoint;
 
-    private Transform thisEnemyTransform;
-
     // Start is called before the first frame update
     void Start()
     {
-        thisEnemyTransform = GetComponent<Transform>();
-        spawnPoint = new Vector3(thisEnemyTransform.position.x,thisEnemyTransform.position.y,thisEnemyTransform.position.z);
+        spawnPoint = new Vector3(this.gameObject.transform.position.x,this.gameObject.transform.position.y,this.gameObject.transform.position.z);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        float distanceToMainChar = Vector3.Distance(thisEnemyTransform.position, mainCharacterTransform.position);
+        float distanceToMainChar = Vector3.Distance(this.gameObject.transform.position, mainCharacterTransform.position);
         if (distanceToMainChar < aggroRadius)// checking if main char is visible for enemy
         {
             UpdateEnemyRotation(new Vector3(mainCharacterTransform.position.x, 0, mainCharacterTransform.position.z));
@@ -42,24 +39,24 @@ public class DoomerController : MonoBehaviour
             }
             else
             {
-                UpdateEnemyPosition(new Vector3(mainCharacterTransform.position.x - thisEnemyTransform.position.x, 0, mainCharacterTransform.position.z - thisEnemyTransform.position.z));
+                UpdateEnemyPosition(new Vector3(mainCharacterTransform.position.x - this.gameObject.transform.position.x, 0, mainCharacterTransform.position.z - this.gameObject.transform.position.z));
             }
-        } else if (Vector3.Distance(thisEnemyTransform.position, spawnPoint) > 2.0f)
+        } else if (Vector3.Distance(this.gameObject.transform.position, spawnPoint) > 2.0f)
         {
             UpdateEnemyRotation(new Vector3(spawnPoint.x,0,spawnPoint.z));
-            UpdateEnemyPosition(new Vector3(spawnPoint.x-thisEnemyTransform.position.x,0,spawnPoint.z-thisEnemyTransform.position.z));
+            UpdateEnemyPosition(new Vector3(spawnPoint.x-this.gameObject.transform.position.x,0,spawnPoint.z-this.gameObject.transform.position.z));
         }
     }
 
     void UpdateEnemyPosition(Vector3 direction)
     {
         direction = Vector3.Normalize(direction);
-        thisEnemyTransform.position += direction * movementSpeed;
+        this.gameObject.transform.position += direction * movementSpeed;
 
     }
     
     void UpdateEnemyRotation(Vector3 direction)
     {
-        thisEnemyTransform.LookAt(direction);
+        this.gameObject.transform.LookAt(direction);
     }
 }
