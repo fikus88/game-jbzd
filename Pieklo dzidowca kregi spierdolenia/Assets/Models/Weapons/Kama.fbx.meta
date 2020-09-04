@@ -1,26 +1,8 @@
 fileFormatVersion: 2
-guid: e3bdf24c0c72a624c9262e447e3cb449
+guid: 3751ade2208c0cb4797ce84310f71a72
 ModelImporter:
   serializedVersion: 20101
-  internalIDToNameTable:
-  - first:
-      74: -8132497811762812368
-    second: Armature|Atk_hand
-  - first:
-      74: -8658246458312146566
-    second: Armature|Atk_leg
-  - first:
-      74: -3281714845378286312
-    second: Armature|dead
-  - first:
-      74: -8945691123924629249
-    second: Armature|Idle
-  - first:
-      74: -8444079141179954383
-    second: Armature|Ressurect
-  - first:
-      74: -7551964380084998518
-    second: Armature|Run
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     materialImportMode: 1
