@@ -69,7 +69,7 @@ public class GowniakController : MonoBehaviour
         }
     }
 
-    private bool AggroExpiredCommenceAttack() => _aggroTimer != null && _aggroTimer.IsRunning &&
+    private bool AggroExpiredCommenceChase() => _aggroTimer != null && _aggroTimer.IsRunning &&
                                                  _aggroTimer.ElapsedMilliseconds >= aggroMaxTimeMs;
 
     private Animator _gowniakAnimator;
@@ -101,7 +101,7 @@ public class GowniakController : MonoBehaviour
                     _aggroTimer = null; // stop aggroTimer, Attack commenced
                     IsInAttackState = true;
                 }
-                else if (distanceToMainChar > attackRadius && AggroExpiredCommenceAttack())
+                else if (distanceToMainChar > attackRadius && AggroExpiredCommenceChase())
                 {
                     _aggroTimer = null;
                     IsInChaseState = true;
